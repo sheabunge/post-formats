@@ -1,0 +1,40 @@
+/**
+ * Chat
+ */
+
+/* Wrapper for entire chat transcript. */
+.chat-transcript { }
+
+/* Individual section of the chat. */
+.chat-row { }
+
+/* Individual speaker in the chat. */
+.chat-speaker-xxx { }
+
+/* Chat author. */
+.chat-author { }
+.chat-author cite { }
+
+/* Chat text. */
+.chat-text { }
+
+
+/**
+ * Quote
+ */
+
+/* Style the quote post wrapper. */
+.format-quote {}
+
+/* Style blockquotes within the quote post. */
+.format-quote blockquote {}
+
+/* Don't forget cite in case a user makes use of it. */
+.format-quote cite {}
+
+
+/**
+ * Aside
+ */
+
+ 
