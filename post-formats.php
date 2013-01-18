@@ -2,15 +2,15 @@
 
 /**
  * Plugin Name: Post Formats
- * Plugin URI: http://bungeshea.com/plugins/post-formats
+ * Plugin URI: https://github.com/bungeshea/post-formats
  * Author Name: Shea Bunge
  * Author URI: http://bungeshea.com
  * Description: Adds support for many different post formats. Much thanks to Justin Tadlock. Also works with Alex King's <a href="http://alexking.org/blog/2011/10/25/wordpress-post-formats-admin-ui">Post Formats Admin UI</a>, but it is not required.
  * Version: 1.0
  *
- * Thanks to Justin Tadlock for many of the code samples that 
+ * Thanks to Justin Tadlock for many of the code samples that
  * went into this plugin
- * 
+ *
  * This plugin also supports the Crowd Favourite Post Formats UI plugin
  * @link http://alexking.org/blog/2011/10/25/wordpress-post-formats-admin-ui
  *
@@ -19,12 +19,12 @@
  */
 
 /***************** Components *****************/
- 
+
 /**
  * Admin interface
  */
 #require_once( plugin_dir_path( __FILE__ ) . 'includes/admin.php' );
- 
+
 /**
  * Post format plural strings
  * @link http://justintadlock.com/archives/2012/09/07/post-format-plural-strings
@@ -55,13 +55,10 @@ $post_formats = array(
 );
 
 foreach( $post_formats as $format ) {
-
 	require_once( plugin_dir_path( __FILE__ ) . "/formats/{$format}.php" );
-	
 }
 
 /***************** Setup *****************/
-
 
 add_action( 'after_setup_theme', 'add_post_formats' );
 
