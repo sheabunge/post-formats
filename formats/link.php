@@ -32,7 +32,7 @@ function post_formats_link_content( $content ) {
 	if ( has_post_format( 'link' ) ) {
 
 		if ( get_post_meta( get_the_ID(), '_format_link_url', true ) )
-			$link = get_post_meta( get_the_ID(), '_format_link_url', true )
+			$link = get_post_meta( get_the_ID(), '_format_link_url', true );
 		else
 			$link = post_formats_get_content_link( $content );
 
