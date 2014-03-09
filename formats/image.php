@@ -12,7 +12,9 @@
 function post_formats_image_content( $content ) {
 
 	/* Only precede past this point if the current post is an image post */
-	if( ! has_post_format( 'image' ) ) return;
+	if( ! has_post_format( 'image' ) ) {
+		return;
+	}
 
 	/* Get the image ID, which may have been added by the Crowdfavourite Post Formats UI plugin */
 	$image_id = intval( get_post_meta( get_the_ID(), '_thumbnail_id', true ) );

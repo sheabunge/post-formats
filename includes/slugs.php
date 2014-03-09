@@ -34,18 +34,20 @@ add_filter( 'term_link', 'my_post_format_link', 10, 3 );
 function my_post_format_link( $link, $term, $taxonomy ) {
 	global $wp_rewrite;
 
-	if ( 'post_format' != $taxonomy )
+	if ( 'post_format' != $taxonomy ) {
 		return $link;
+	}
 
 	$slugs = my_get_post_format_slugs();
 
 	$slug = str_replace( 'post-format-', '', $term->slug );
 	$slug = isset( $slugs[ $slug ] ) ? $slugs[ $slug ] : $slug;
 
-	if ( $wp_rewrite->get_extra_permastruct( $taxonomy ) )
+	if ( $wp_rewrite->get_extra_permastruct( $taxonomy ) ) {
 		$link = str_replace( "/{$term->slug}", '/' . $slug, $link );
-	else
+	} else {
 		$link = add_query_arg( 'post_format', $slug, remove_query_arg( 'post_format', $link ) );
+	}
 
 	return $link;
 }
@@ -64,19 +66,21 @@ add_filter( 'request', 'my_post_format_request' );
  */
 function my_post_format_request( $qvs ) {
 
-	if ( !isset( $qvs['post_format'] ) )
+	if ( ! isset( $qvs['post_format'] ) ) {
 		return $qvs;
+	}
 
 	$slugs = array_flip( my_get_post_format_slugs() );
 
-	if ( isset( $slugs[ $qvs['post_format'] ] ) )
+	if ( isset( $slugs[ $qvs['post_format'] ] ) ) {
 		$qvs['post_format'] = 'post-format-' . $slugs[ $qvs['post_format'] ];
+	}
 
 	$tax = get_taxonomy( 'post_format' );
 
-	if ( !is_admin() )
+	if ( ! is_admin() ) {
 		$qvs['post_type'] = $tax->object_type;
+	}
 
 	return $qvs;
 }
-
