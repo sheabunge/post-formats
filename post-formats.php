@@ -23,19 +23,19 @@
 /**
  * Admin interface
  */
-#require_once( plugin_dir_path( __FILE__ ) . 'includes/admin.php' );
+#require_once plugin_dir_path( __FILE__ ) . 'includes/admin.php';
 
 /**
  * Post format plural strings
  * @link http://justintadlock.com/archives/2012/09/07/post-format-plural-strings
  */
-#require_once( plugin_dir_path( __FILE__ ) . 'includes/plurals.php' );
+#require_once plugin_dir_path( __FILE__ ) . 'includes/plurals.php';
 
 /**
  * Custom URLs for post formats
  * @link http://justintadlock.com/archives/2012/09/11/custom-post-format-urls
  */
-#require_once( plugin_dir_path( __FILE__ ) . 'includes/plurals.php' );
+#require_once plugin_dir_path( __FILE__ ) . 'includes/plurals.php';
 
 
 /***************** Post Formats *****************/
@@ -55,7 +55,7 @@ $post_formats = array(
 );
 
 foreach( $post_formats as $format ) {
-	require_once( plugin_dir_path( __FILE__ ) . "/formats/{$format}.php" );
+	require_once plugin_dir_path( __FILE__ ) . "/formats/{$format}.php" );
 }
 
 /***************** Setup *****************/

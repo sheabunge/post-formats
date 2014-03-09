@@ -12,7 +12,7 @@
 function post_formats_image_content( $content ) {
 
 	/* Only precede past this point if the current post is an image post */
-	if( ! has_post_format( 'image' ) ) {
+	if ( ! has_post_format( 'image' ) ) {
 		return;
 	}
 
